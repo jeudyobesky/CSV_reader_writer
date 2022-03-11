@@ -3,11 +3,12 @@ require_relative 'reader.rb'
 
 class Writer
 attr_accessor :data, :headers
-  def initialize
+  def initialize(data)
     @headers = ['full_name', 'address']
+    @data = data
   end
   
-  def perform(data)
+  def perform
     CSV.open("csv_files/dzdoc2.csv", "w") do |csv|
     csv << headers
         data.each do |full_name, address|

@@ -6,7 +6,7 @@ class Launcher
     def perform
         data = Reader.new.perform
         pp data
-        Writer.new.perform(data)
+        Writer.new(data).perform
     end
 end 
 
